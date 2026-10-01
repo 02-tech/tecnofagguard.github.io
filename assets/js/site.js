@@ -13,3 +13,20 @@
   lista.addEventListener("click", function (e) { if (e.target.closest("a")) fechar(); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") { fechar(); } });
 })();
+
+/* Apoio: copiar a chave Pix (só aparece se o navegador permitir copiar; a chave está sempre visível no texto). */
+(function () {
+  "use strict";
+  var botao = document.getElementById("pix-copiar");
+  var chave = document.getElementById("pix-chave");
+  var aviso = document.getElementById("pix-aviso");
+  if (!botao || !chave || !navigator.clipboard || !window.isSecureContext) return;
+  botao.hidden = false;
+  botao.addEventListener("click", function () {
+    navigator.clipboard.writeText(chave.getAttribute("data-chave")).then(function () {
+      if (aviso) aviso.textContent = "Chave Pix copiada.";
+    }, function () {
+      if (aviso) aviso.textContent = "Não foi possível copiar. A chave está escrita acima.";
+    });
+  });
+})();

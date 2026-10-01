@@ -54,8 +54,7 @@ e rodar `node tools/testar-site.js https://tecnofagguard.com.br/ .capturas-produ
 
 ## Ativar pendências quando houver dado validado
 
-- **Formas de apoio** (`#apoie`, bloco `#apoio-meios`, hoje `data-ativo="false"` com aviso "em breve"): substituir o
-  aviso pelo meio validado (ex.: chave Pix do projeto e titular). Nunca usar dado não confirmado por Guilherme.
+- **Formas de apoio**: ATIVO desde 2026-10-01 (Pix CNPJ 60.179.279/0001-44, titular Imperial Volt). Alterar só com dado confirmado por Guilherme.
 - **Contato** (`#contato`, lista `#canais`): hoje só o Instagram oficial. Acrescentar e-mail ou WhatsApp oficiais
   do TECNOFAG GUARD quando existirem (o domínio não tem e-mail: sem registro MX).
 - Ao adicionar perfis oficiais, incluir também em `sameAs` do JSON-LD.

@@ -23,10 +23,14 @@ Este projeto pertence ao Núcleo FAGUITAL e segue o protocolo canônico em
 - Aplicações são contextos em estudo, não produtos. Não publicar nomes internos (Pet, Saúde Crítica, Hotel etc.).
 - Apoio não é investimento: nunca prometer retorno, participação, rendimento ou lucro. Pix/CNPJ só com dado validado.
 - Contato: só canais oficiais validados. Não extrair contato de arquivos internos ou credenciais.
-- Imperial Volt é a EMPRESA de FAGUITAL e aparece de forma estratégica, com link para https://imperialvolt.com/ (decisão de Guilherme,
-  2026-10-01), sem tirar o protagonismo do TECNOFAG GUARD (projeto próprio, não produto subordinado).
-- faguital.com.br é o site PESSOAL de Guilherme: não linkar no site da marca (decisão de Guilherme, 2026-10-01; só se ele
-  pedir um lugar estratégico). FAGUITAL aparece como criador apenas em texto.
+- Imperial Volt é OUTRA EMPRESA de Guilherme (não faz parte do ecossistema TECNOFAG GUARD). Aparece com força no bloco
+  `#empresa` em Parcerias. Decisões de Guilherme, 2026-10-01.
+- O criador é apresentado UMA vez, na definição, com o nome completo: "criado pelo prototipador Guilherme Carvalho de
+  Andrade (FAGUITAL)". Não repetir quem criou nem quem é a empresa em outras seções.
+- Sempre que "FAGUITAL" ou "Imperial Volt" aparecerem no texto visível, o nome é link (faguital.com.br e
+  imperialvolt.com). Nunca usar botões do tipo "Conhecer a empresa".
+- Sem duplicidade de sentido: cada ideia aparece uma vez, no lugar certo (a frase "Informações públicas estão
+  disponíveis neste site." só em Propriedade intelectual).
 - Redação em português do Brasil, sem traços ou travessões como separador.
 - Todo o conteúdo existe em HTML real, legível sem JavaScript. Animações são camada visual.
 

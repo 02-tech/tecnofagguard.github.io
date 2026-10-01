@@ -543,3 +543,16 @@ strong { color: var(--texto); font-weight: 600; }
   .pilares > li, .contextos > li, .ficha, .alem, .apoio-meios, .linha-tempo .marco-marca, .canal, .rodape { background: none; }
   .pilares > li, .contextos > li, .ficha > div, .linha-tempo > li, .faq > div { break-inside: avoid; }
 }
+
+/* ===== Apoio: chave Pix (CLAUDE, integração 2026-10-01; mesma linguagem visual da ficha) ===== */
+.apoio-meios .pix { display: grid; gap: .75rem; margin: 1.25rem 0; padding: 1.25rem 1.4rem; border: 1px solid rgba(232, 194, 122, .35);
+  border-radius: 1rem; background: linear-gradient(160deg, rgba(232, 194, 122, .07), rgba(127, 224, 255, .03)); }
+.apoio-meios .pix div { display: grid; gap: .2rem; }
+.apoio-meios .pix dt { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #b9c3cd; }
+.apoio-meios .pix dd { margin: 0; font-size: clamp(1.15rem, 4.6vw, 1.5rem); font-weight: 600; color: #f1f4f8; }
+.apoio-meios .pix-chave { font-variant-numeric: tabular-nums; letter-spacing: .02em; color: #f0d9a8; user-select: all; }
+.apoio-meios .pix-copiar[hidden] { display: none; }
+.apoio-meios .pix-aviso { min-height: 1.5em; margin-top: .6rem; color: #9ee7f0; }
+/* Com o Pix ativo, o ponto de "em breve" não se aplica */
+.apoio-meios[data-ativo="true"] { padding-inline-start: 1.5rem; }
+.apoio-meios[data-ativo="true"]::before { display: none; }

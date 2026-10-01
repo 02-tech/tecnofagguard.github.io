@@ -67,7 +67,7 @@ const ok = (cond, msg) => { console.log((cond ? "ok   " : "FALHA") + " - " + msg
     ok(erros.length === 0, `${w}x${h}: 0 erros de console/rede ${erros.join(" | ")}`);
     await foto(`abertura_${w}x${h}.png`);
     if (w === 390 || w === 1366) {
-      for (const sec of ["o-que-e", "aplicacoes", "trajetoria", "parcerias", "contato"]) {
+      for (const sec of ["o-que-e", "aplicacoes", "trajetoria", "criador", "parcerias", "empresa", "apoie", "contato"]) {
         await ev(`document.getElementById("${sec}").scrollIntoView({block:"start"})`); await sleep(1300);
         await foto(`${sec}_${w}x${h}.png`);
       }
@@ -80,7 +80,7 @@ const ok = (cond, msg) => { console.log((cond ? "ok   " : "FALHA") + " - " + msg
   await abrir(); await sleep(800);
   const semJs = await ev(`(() => { const vis = sel => { const e = document.querySelector(sel); if (!e) return false; const s = getComputedStyle(e);
       const r = e.getBoundingClientRect(); return s.display !== "none" && s.visibility !== "hidden" && parseFloat(s.opacity) > 0.5 && r.width > 0 && r.height > 0; };
-    return ["#titulo-principal", ".slogan-1", ".slogan-2", ".chamada", ".definicao-texto", ".ficha", ".contextos", ".linha-tempo", "#titulo-pi", ".faq", ".canais", ".assinatura"].map(s => [s, vis(s)]); })()`);
+    return ["#titulo-principal", ".slogan-1", ".slogan-2", ".chamada", ".definicao-texto", ".ficha", ".contextos", ".linha-tempo", "#titulo-pi", ".pix", ".canais", ".assinatura"].map(s => [s, vis(s)]); })()`);
   ok(semJs.every(x => x[1]), "sem JS: conteúdo principal visível " + JSON.stringify(semJs.filter(x => !x[1])));
   await send("Emulation.setScriptExecutionDisabled", { value: false });
 
@@ -146,7 +146,7 @@ const ok = (cond, msg) => { console.log((cond ? "ok   " : "FALHA") + " - " + msg
   // 7) CPU em repouso: com a abertura fora da tela e rodapé parado, nada deve rodar continuamente
   await send("Network.emulateNetworkConditions", { offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1 });
   await abrir(); await sleep(7000);
-  await ev(`document.getElementById("perguntas").scrollIntoView()`); await sleep(1500);
+  await ev(`document.getElementById("apoie").scrollIntoView()`); await sleep(1500);
   const raf = await ev(`new Promise(res => { let n = 0; const orig = window.requestAnimationFrame; let ativo = true;
     window.requestAnimationFrame = cb => { if (ativo) n++; return orig(cb); }; setTimeout(() => { ativo = false; window.requestAnimationFrame = orig; res(n); }, 2000); })`);
   ok(raf < 20, `repouso fora da abertura: ${raf} pedidos de quadro em 2 s (loops pausados)`);

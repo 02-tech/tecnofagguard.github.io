@@ -66,3 +66,22 @@
   CLS 0, tempo bloqueado 0 ms, 30 KB transferidos (com compressão do GitHub Pages).
 - PageSpeed Insights (API pública): recusado com 429 (cota diária anônima esgotada); não executado. Repetir depois em
   https://pagespeed.web.dev/ ou com chave de API.
+
+## Revisão editorial publicada: 2026-10-01 (pedidos de Guilherme no chat, com prints do celular)
+
+Scripts que registram cada troca: `tools/revisao-editorial-20261001.js`, `...b.js`, `...c.js` (idempotentes).
+- Criador apresentado uma vez, com nome completo, na definição: "criado pelo prototipador Guilherme Carvalho de Andrade
+  (FAGUITAL)". Bloco curto "O criador" depois da Trajetória (petropolitano, ex-militar condecorado do Exército Brasileiro
+  e prototipador), só com dados que ele já publica em faguital.com.br. Detalhes militares (infantaria, comunicações,
+  montanha) ficam para o site pessoal, por recomendação, sem alterar aquele projeto.
+- FAGUITAL e Imperial Volt são SEMPRE links no texto visível; nenhum botão "conhecer". Imperial Volt é outra empresa
+  de Guilherme, não parte do ecossistema (frase "Uma iniciativa do ecossistema Imperial Volt" removida do rodapé).
+- Duplicidades removidas: resumo da abertura, segundo parágrafo da definição, itens da ficha já ditos na definição,
+  pilar "Tecnologia brasileira", concessão da marca repetida em PI, seção "Quem criou", seção de perguntas, segunda
+  ocorrência de "Informações públicas estão disponíveis neste site.", lista de públicos repetida em Contato, descrição
+  repetida no rodapé.
+- Trajetória: novo marco "2019 e 2020: Antes da ideia" (estudos profundos, sem idealização do projeto); 2023 passa a ser
+  o nascimento da ideia, já com identidade. Ficha: "Ideia 2023".
+- Apoio ativo: chave Pix CNPJ 60.179.279/0001-44 (informada por Guilherme), titular Imperial Volt (link), botão para
+  copiar a chave quando o navegador permite; aviso de que apoio não é investimento mantido.
+- Testes locais: testar-site.js TODOS OK (LCP 924 ms, CLS 0); verificar-conteudo auditar TUDO OK.

@@ -66,7 +66,7 @@ if (modo === "comparar") {
   ok(/Informações públicas estão disponíveis neste site\./.test(texto), "PI: 'Informações públicas estão disponíveis neste site.' presente");
   ok(!/(retorno financeiro|rendimento|lucro|participação societária)(?![^.]*não)/i.test(texto.replace(/Não é investimento e não envolve[^.]*\./, "")), "apoio: sem promessa financeira fora do aviso");
   // 5) definição e relações semânticas no texto (não só em metadados)
-  ok(/O TECNOFAG GUARD® é um ecossistema brasileiro de identificação digital criado por FAGUITAL/.test(texto), "definição direta presente no texto");
+  ok(/O TECNOFAG GUARD® é um ecossistema brasileiro de identificação digital criado pelo prototipador Guilherme Carvalho de Andrade \(\s*FAGUITAL\s*\)/.test(texto), "definição direta presente no texto");
   for (const t of ["FAGUITAL", "Brasil", "hardware", "software", "INPI", "em desenvolvimento", "tecnofagguard.com.br", "2023"])
     ok(new RegExp(t, "i").test(texto), `relação no texto: ${t}`);
   // 6) SEO técnico
