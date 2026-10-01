@@ -1,11 +1,329 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
 <head>
-  <meta charset="UTF-8">
-  <title>TECNOFAG GUARD</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>TECNOFAG GUARD® | Ecossistema brasileiro de identificação digital</title>
+  <meta name="description" content="Ecossistema brasileiro de identificação digital criado por FAGUITAL. O TECNOFAG GUARD® conecta o mundo físico a experiências digitais com hardware e software.">
+  <link rel="canonical" href="https://tecnofagguard.com.br/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="FAGUITAL">
+  <meta name="theme-color" content="#07080b">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="TECNOFAG GUARD®">
+  <meta property="og:url" content="https://tecnofagguard.com.br/">
+  <meta property="og:title" content="TECNOFAG GUARD® | Você visualiza. Você identifica.">
+  <meta property="og:description" content="Ecossistema brasileiro de identificação digital criado por FAGUITAL. Integração entre hardware e software para conectar o mundo físico a experiências digitais.">
+  <meta property="og:image" content="https://tecnofagguard.com.br/assets/img/og-tecnofag-guard.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TECNOFAG GUARD®. Você visualiza. Você identifica.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TECNOFAG GUARD® | Você visualiza. Você identifica.">
+  <meta name="twitter:description" content="Ecossistema brasileiro de identificação digital criado por FAGUITAL.">
+  <meta name="twitter:image" content="https://tecnofagguard.com.br/assets/img/og-tecnofag-guard.png">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/fx-marca.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://tecnofagguard.com.br/#website",
+        "url": "https://tecnofagguard.com.br/",
+        "name": "TECNOFAG GUARD",
+        "alternateName": "TECNOFAG GUARD®",
+        "description": "Site oficial do TECNOFAG GUARD®, ecossistema brasileiro de identificação digital criado por FAGUITAL.",
+        "inLanguage": "pt-BR",
+        "about": { "@id": "https://tecnofagguard.com.br/#tecnofag-guard" },
+        "creator": { "@id": "https://tecnofagguard.com.br/#faguital" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://tecnofagguard.com.br/#webpage",
+        "url": "https://tecnofagguard.com.br/",
+        "name": "TECNOFAG GUARD® | Ecossistema brasileiro de identificação digital",
+        "isPartOf": { "@id": "https://tecnofagguard.com.br/#website" },
+        "about": { "@id": "https://tecnofagguard.com.br/#tecnofag-guard" },
+        "mainEntity": { "@id": "https://tecnofagguard.com.br/#tecnofag-guard" },
+        "inLanguage": "pt-BR",
+        "primaryImageOfPage": "https://tecnofagguard.com.br/assets/img/og-tecnofag-guard.png"
+      },
+      {
+        "@type": "Project",
+        "@id": "https://tecnofagguard.com.br/#tecnofag-guard",
+        "name": "TECNOFAG GUARD",
+        "alternateName": "TECNOFAG GUARD®",
+        "url": "https://tecnofagguard.com.br/",
+        "description": "O TECNOFAG GUARD® é um ecossistema brasileiro de identificação digital criado por FAGUITAL, desenvolvido para conectar elementos do mundo físico a experiências digitais por meio da integração entre hardware e software. O projeto está em desenvolvimento e possui tecnologia com pedido de patente de invenção depositado junto ao INPI.",
+        "slogan": "Você visualiza. Você identifica.",
+        "founder": { "@id": "https://tecnofagguard.com.br/#faguital" },
+        "foundingLocation": { "@type": "Country", "name": "Brasil" },
+        "brand": { "@id": "https://tecnofagguard.com.br/#marca" },
+        "knowsAbout": ["Identificação digital", "Integração entre mundo físico e digital", "Hardware", "Software", "Pesquisa e desenvolvimento", "Prototipagem"],
+        "sameAs": ["https://www.instagram.com/tecnofagguard.com.br/"]
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://tecnofagguard.com.br/#marca",
+        "name": "TECNOFAG GUARD",
+        "slogan": "Você visualiza. Você identifica.",
+        "url": "https://tecnofagguard.com.br/"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://tecnofagguard.com.br/#faguital",
+        "name": "Guilherme Carvalho de Andrade",
+        "alternateName": "FAGUITAL",
+        "url": "https://faguital.com.br/",
+        "nationality": { "@type": "Country", "name": "Brasil" },
+        "affiliation": { "@id": "https://tecnofagguard.com.br/#imperial-volt" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://tecnofagguard.com.br/#imperial-volt",
+        "name": "Imperial Volt",
+        "url": "https://imperialvolt.com/"
+      }
+    ]
+  }
+  </script>
+  <script>document.documentElement.classList.remove("sem-js");document.documentElement.classList.add("com-js");</script>
 </head>
-<body style="background:#0b0b0b;color:#fff;font-family:Arial;text-align:center;padding-top:50px;">
-  <h1>TECNOFAG GUARD®</h1>
-  <p>Site online com sucesso.</p>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo" id="topo">
+    <a class="topo-marca" href="/" aria-label="TECNOFAG GUARD, página inicial">TECNOFAG GUARD<span class="reg">®</span></a>
+    <nav class="topo-nav" aria-label="Seções do site">
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-lista">Menu</button>
+      <ul id="menu-lista">
+        <li><a href="#o-que-e">O que é</a></li>
+        <li><a href="#aplicacoes">Aplicações</a></li>
+        <li><a href="#trajetoria">Trajetória</a></li>
+        <li><a href="#propriedade-intelectual">Propriedade intelectual</a></li>
+        <li><a href="#parcerias">Parcerias</a></li>
+        <li><a href="#apoie">Apoie</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ABERTURA: todo o texto existe no HTML; a animação (fx) é só camada visual por cima -->
+    <section class="abertura" id="inicio" aria-labelledby="titulo-principal">
+      <div class="abertura-fx" aria-hidden="true"></div>
+      <div class="abertura-texto">
+        <h1 id="titulo-principal" class="marca-titulo">TECNOFAG GUARD<span class="reg">®</span></h1>
+        <p class="slogan">
+          <span class="slogan-linha slogan-1">Você visualiza.</span>
+          <span class="slogan-linha slogan-2">Você identifica.</span>
+        </p>
+        <p class="chamada">O que vamos identificar hoje?</p>
+        <p class="abertura-resumo">Um ecossistema brasileiro de identificação digital.</p>
+        <a class="abertura-seguir" href="#o-que-e">Conheça o projeto</a>
+      </div>
+    </section>
+
+    <!-- DEFINIÇÃO: resposta direta a "o que é o TECNOFAG GUARD?" -->
+    <section class="secao definicao" id="o-que-e" aria-labelledby="titulo-o-que-e">
+      <p class="secao-rotulo">O que é</p>
+      <h2 id="titulo-o-que-e">O que é o TECNOFAG GUARD®?</h2>
+      <p class="definicao-texto">O <strong>TECNOFAG GUARD®</strong> é um ecossistema brasileiro de identificação digital criado por <strong>FAGUITAL</strong>, desenvolvido para conectar elementos do mundo físico a experiências digitais por meio da integração entre hardware e software.</p>
+      <p>O projeto pesquisa e desenvolve novas possibilidades de identificação aplicáveis a diferentes contextos. Desenvolvido para explorar essas possibilidades, ele evolui para diferentes formatos, aplicações e cenários de uso.</p>
+
+      <dl class="ficha" aria-label="Ficha do TECNOFAG GUARD">
+        <div><dt>Nome</dt><dd>TECNOFAG GUARD®</dd></div>
+        <div><dt>Natureza</dt><dd>Projeto e ecossistema brasileiro de tecnologia</dd></div>
+        <div><dt>Área</dt><dd>Identificação digital e integração entre o mundo físico e experiências digitais, com hardware e software</dd></div>
+        <div><dt>Criador</dt><dd>Guilherme Carvalho de Andrade (FAGUITAL)</dd></div>
+        <div><dt>Origem</dt><dd>Brasil</dd></div>
+        <div><dt>Início da trajetória</dt><dd>2023</dd></div>
+        <div><dt>Situação</dt><dd>Em desenvolvimento</dd></div>
+        <div><dt>Propriedade intelectual</dt><dd>Pedido de patente de invenção depositado junto ao INPI e marca concedida</dd></div>
+        <div><dt>Site oficial</dt><dd><a href="https://tecnofagguard.com.br/">tecnofagguard.com.br</a></dd></div>
+      </dl>
+    </section>
+
+    <!-- PROPOSTA -->
+    <section class="secao proposta" id="proposta" aria-labelledby="titulo-proposta">
+      <p class="secao-rotulo">Proposta</p>
+      <h2 id="titulo-proposta">Do mundo físico à experiência digital.</h2>
+      <p>O TECNOFAG GUARD® nasce de uma pergunta simples: como fazer com que aquilo que está à nossa frente possa ser reconhecido, compreendido e conectado a uma experiência digital?</p>
+      <ul class="pilares">
+        <li>
+          <h3>Identificação digital</h3>
+          <p>Reconhecer pessoas, objetos e contextos e transformar esse reconhecimento em informação útil.</p>
+        </li>
+        <li>
+          <h3>Hardware e software</h3>
+          <p>Uma proposta construída na integração entre o que é físico e o que é digital, pensada como um ecossistema.</p>
+        </li>
+        <li>
+          <h3>Pesquisa e prototipagem</h3>
+          <p>Um projeto em desenvolvimento contínuo, que evolui por meio de pesquisa, protótipos e validação.</p>
+        </li>
+        <li>
+          <h3>Tecnologia brasileira</h3>
+          <p>Idealizado e desenvolvido no Brasil, com propriedade intelectual em proteção junto ao INPI.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- APLICAÇÕES: amplitude sem mecanismo, sem produtos inventados -->
+    <section class="secao aplicacoes" id="aplicacoes" aria-labelledby="titulo-aplicacoes">
+      <p class="secao-rotulo">Aplicações</p>
+      <h2 id="titulo-aplicacoes">Uma ideia. Muitos contextos.</h2>
+      <p>O conceito não está preso a uma única aplicação. O TECNOFAG GUARD® explora possibilidades de identificação em diferentes contextos:</p>
+      <ul class="contextos">
+        <li><h3>Pessoas</h3><p>Identificação e informação associadas a quem precisa ser reconhecido.</p></li>
+        <li><h3>Objetos</h3><p>Itens que passam a carregar uma camada digital de informação.</p></li>
+        <li><h3>Equipamentos</h3><p>Reconhecimento de equipamentos e do que precisa ser sabido sobre eles.</p></li>
+        <li><h3>Animais</h3><p>Possibilidades de identificação aplicadas ao cuidado com animais.</p></li>
+        <li><h3>Ambientes profissionais</h3><p>Rotinas de trabalho em que identificar com clareza faz diferença.</p></li>
+        <li><h3>Aplicações institucionais</h3><p>Contextos em que organizações precisam reconhecer e registrar informação.</p></li>
+        <li><h3>Cenários de campo</h3><p>Situações fora do escritório, onde a identificação precisa acompanhar quem está em movimento.</p></li>
+      </ul>
+      <p class="nota">Contextos de aplicação em estudo e desenvolvimento. Não representam produtos comerciais finalizados.</p>
+    </section>
+
+    <!-- TRAJETÓRIA -->
+    <section class="secao trajetoria" id="trajetoria" aria-labelledby="titulo-trajetoria">
+      <p class="secao-rotulo">Trajetória</p>
+      <h2 id="titulo-trajetoria">Uma história em evolução.</h2>
+      <ol class="linha-tempo">
+        <li>
+          <p class="marco-data"><time datetime="2023">2023</time></p>
+          <h3>Onde tudo começou.</h3>
+          <p>Uma ideia começa a tomar forma. Ainda distante do que o TECNOFAG GUARD se tornaria, mas já com a essência que conduziria toda a sua evolução.</p>
+        </li>
+        <li>
+          <p class="marco-data"><time datetime="2024-06-26">26 de junho de 2024</time></p>
+          <h3>Proteção e identidade.</h3>
+          <p>O TECNOFAG GUARD inicia sua trajetória junto ao Instituto Nacional da Propriedade Industrial, marcando uma nova fase na proteção e na consolidação da identidade do projeto.</p>
+        </li>
+        <li>
+          <p class="marco-data"><time datetime="2025">2025</time></p>
+          <h3>Amadurecimento.</h3>
+          <p>Um período de pesquisa, desenvolvimento e amadurecimento, com avanço na proteção da tecnologia.</p>
+        </li>
+        <li>
+          <p class="marco-data"><time datetime="2026">2026</time></p>
+          <h3>Consolidação e expansão.</h3>
+          <p>Uma nova etapa de consolidação e de expansão do ecossistema.</p>
+        </li>
+        <li class="marco-marca">
+          <p class="marco-data">Um novo capítulo</p>
+          <h3>A marca foi concedida.</h3>
+          <p>Entre pesquisa, desenvolvimento e evolução contínua, outro marco chegou: a marca TECNOFAG GUARD foi concedida.</p>
+          <p>Curiosamente, um dia antes do aniversário de seu criador. Quase como um presente, marcando o início de um novo capítulo.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PROPRIEDADE INTELECTUAL -->
+    <section class="secao pi" id="propriedade-intelectual" aria-labelledby="titulo-pi">
+      <p class="secao-rotulo">Propriedade intelectual</p>
+      <h2 id="titulo-pi">Tecnologia em desenvolvimento. Propriedade intelectual em proteção.</h2>
+      <p>O TECNOFAG GUARD possui tecnologia com pedido de patente de invenção depositado junto ao INPI, o Instituto Nacional da Propriedade Industrial. A marca TECNOFAG GUARD® foi concedida.</p>
+      <p class="destaque">Informações públicas estão disponíveis neste site.</p>
+    </section>
+
+    <!-- CRIADOR E ECOSSISTEMA -->
+    <section class="secao criador" id="criador" aria-labelledby="titulo-criador">
+      <p class="secao-rotulo">Criador</p>
+      <h2 id="titulo-criador">Quem criou.</h2>
+      <p>O TECNOFAG GUARD® foi criado por Guilherme Carvalho de Andrade (<a href="https://faguital.com.br/" rel="noopener">FAGUITAL</a>), prototipador e desenvolvedor brasileiro de tecnologias aplicadas, também dono da Imperial Volt. O TECNOFAG GUARD® é um projeto próprio, com identidade e trajetória próprias.</p>
+      <p>A <a href="https://imperialvolt.com/" rel="noopener">Imperial Volt</a> é a empresa de FAGUITAL, dedicada a sites, sistemas, aplicativos e soluções sob medida, e dá a estrutura empresarial às parcerias do projeto.</p>
+    </section>
+
+    <!-- PARCERIAS -->
+    <section class="secao parcerias" id="parcerias" aria-labelledby="titulo-parcerias">
+      <p class="secao-rotulo">Parcerias</p>
+      <h2 id="titulo-parcerias">Faça parte do desenvolvimento.</h2>
+      <p>O TECNOFAG GUARD® está aberto ao diálogo com empresas, profissionais, pesquisadores, fornecedores e potenciais parceiros interessados em acompanhar ou contribuir com o desenvolvimento do projeto.</p>
+      <p>Para propostas de parceria, desenvolvimento, investimento ou outras formas de colaboração, entre em contato diretamente com o responsável pelo projeto.</p>
+
+      <div class="alem empresa" id="empresa">
+        <h3>Uma empresa por trás do projeto.</h3>
+        <p>Parcerias, propostas comerciais e acordos envolvendo o TECNOFAG GUARD® contam com a estrutura da <a href="https://imperialvolt.com/" rel="noopener">Imperial Volt</a>, empresa de Guilherme Carvalho de Andrade (FAGUITAL), criador do TECNOFAG GUARD®. A Imperial Volt atua com sites, sistemas, aplicativos e soluções sob medida.</p>
+        <a class="botao" href="https://imperialvolt.com/" rel="noopener">Conhecer a Imperial Volt</a>
+      </div>
+
+      <div class="alem" id="confidencialidade">
+        <h3>Algumas conversas precisam ir além.</h3>
+        <p>Informações públicas estão disponíveis neste site. Quando uma conversa exigir informações técnicas reservadas, poderá ser utilizado um acordo de confidencialidade para permitir o aprofundamento entre as partes.</p>
+        <ol class="passos">
+          <li>Contato</li>
+          <li>Conversa inicial</li>
+          <li>Entendimento do interesse</li>
+          <li>Confidencialidade, quando necessária</li>
+          <li>Conversa técnica aprofundada</li>
+        </ol>
+      </div>
+      <a class="botao" href="#contato">Falar sobre parceria</a>
+    </section>
+
+    <!-- APOIO: não é investimento; meio de apoio ainda não ativado (falta informação validada) -->
+    <section class="secao apoie" id="apoie" aria-labelledby="titulo-apoie">
+      <p class="secao-rotulo">Apoio</p>
+      <h2 id="titulo-apoie">Apoie tecnologia brasileira.</h2>
+      <p>O TECNOFAG GUARD é um projeto brasileiro independente em desenvolvimento.</p>
+      <p>Se você acredita no potencial da tecnologia nacional e deseja contribuir com a continuidade da pesquisa, da prototipagem e do desenvolvimento, conheça as formas de apoiar o projeto.</p>
+      <div class="apoio-meios" id="apoio-meios" data-ativo="false">
+        <p class="apoio-em-breve">As formas de apoio serão publicadas em breve nesta página. Enquanto isso, você pode falar com o projeto pelos canais de contato.</p>
+      </div>
+      <p class="nota">O apoio é uma contribuição voluntária ao desenvolvimento do projeto. Não é investimento e não envolve retorno financeiro, participação societária, rendimento, lucro ou qualquer contrapartida financeira. Interesse em parceria ou investimento deve ser tratado diretamente pelo contato.</p>
+    </section>
+
+    <!-- PERGUNTAS: respostas objetivas, legíveis por pessoas e por buscadores -->
+    <section class="secao perguntas" id="perguntas" aria-labelledby="titulo-perguntas">
+      <p class="secao-rotulo">Perguntas</p>
+      <h2 id="titulo-perguntas">Em poucas palavras.</h2>
+      <dl class="faq">
+        <div><dt>O que é o TECNOFAG GUARD?</dt><dd>Um ecossistema brasileiro de identificação digital que conecta elementos do mundo físico a experiências digitais por meio da integração entre hardware e software.</dd></div>
+        <div><dt>Quem criou o TECNOFAG GUARD?</dt><dd>O TECNOFAG GUARD foi criado por Guilherme Carvalho de Andrade, conhecido como FAGUITAL.</dd></div>
+        <div><dt>É um projeto brasileiro?</dt><dd>Sim. O TECNOFAG GUARD é um projeto brasileiro, com trajetória iniciada em 2023.</dd></div>
+        <div><dt>Já está pronto?</dt><dd>O TECNOFAG GUARD está em desenvolvimento. As aplicações apresentadas são contextos em estudo, não produtos comerciais finalizados.</dd></div>
+        <div><dt>Existe proteção de propriedade intelectual?</dt><dd>Sim. O projeto possui tecnologia com pedido de patente de invenção depositado junto ao INPI, e a marca TECNOFAG GUARD foi concedida.</dd></div>
+        <div><dt>Qual é o site oficial?</dt><dd>O site oficial do TECNOFAG GUARD é <a href="https://tecnofagguard.com.br/">tecnofagguard.com.br</a>.</dd></div>
+        <div><dt>Como uma empresa pode conversar sobre parceria?</dt><dd>Pelos canais da seção <a href="#contato">Contato</a>. A conversa começa de forma aberta e, quando for preciso aprofundar aspectos técnicos reservados, pode avançar com um acordo de confidencialidade.</dd></div>
+      </dl>
+    </section>
+
+    <!-- CONTATO: só canais oficiais validados -->
+    <section class="secao contato" id="contato" aria-labelledby="titulo-contato">
+      <p class="secao-rotulo">Contato</p>
+      <h2 id="titulo-contato">Vamos conversar.</h2>
+      <p>Empresas, pesquisadores, fornecedores, profissionais e potenciais parceiros podem entrar em contato com o TECNOFAG GUARD®.</p>
+      <ul class="canais" id="canais">
+        <li><a class="canal" href="https://www.instagram.com/tecnofagguard.com.br/" rel="noopener"><span class="canal-nome">Instagram oficial</span><span class="canal-valor">@tecnofagguard.com.br</span></a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ: assinatura final; a animação do ® é camada visual (fx) e respeita movimento reduzido -->
+  <footer class="rodape" id="rodape">
+    <p class="assinatura" aria-label="TECNOFAG GUARD, marca registrada">
+      <span class="assinatura-nome" aria-hidden="true">TECNOFAG GUARD</span><button class="assinatura-reg" type="button" aria-label="Marca registrada. Tocar para ver a animação novamente">®</button>
+      <span class="assinatura-legenda" aria-hidden="true">Marca registrada</span>
+    </p>
+    <p class="rodape-slogan">Você visualiza. Você identifica.</p>
+    <p class="rodape-info">TECNOFAG GUARD® é um projeto brasileiro de identificação digital criado por FAGUITAL.<br>Site oficial: <a href="https://tecnofagguard.com.br/">tecnofagguard.com.br</a><br>Uma iniciativa do ecossistema <a href="https://imperialvolt.com/" rel="noopener">Imperial Volt</a></p>
+    <p class="rodape-copy"><small>© 2026 TECNOFAG GUARD®. Todos os direitos reservados.</small></p>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/fx-abertura.js" defer></script>
+  <script src="/assets/js/fx-marca.js" defer></script>
 </body>
 </html>

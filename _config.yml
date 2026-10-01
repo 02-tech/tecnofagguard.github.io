@@ -1,0 +1,11 @@
+# GitHub Pages (Jekyll): o site é HTML estático; estes itens são internos e não podem ser publicados.
+exclude:
+  - docs/
+  - tools/
+  - CLAUDE.md
+  - README.md
+  - node_modules/
+  - package.json
+  - package-lock.json
+include:
+  - .well-known

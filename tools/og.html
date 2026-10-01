@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<!-- Modelo da imagem Open Graph (1200x630). Só tipografia e abstração de luz; nenhum logotipo e nenhuma representação do produto. -->
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #07080b; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif; color: #eef3f8;
+    background:
+      radial-gradient(620px 300px at 50% 46%, rgba(127, 224, 255, .16), transparent 70%),
+      radial-gradient(900px 500px at 50% 120%, rgba(232, 194, 122, .10), transparent 70%),
+      #07080b;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;
+  }
+  .aneis { position: absolute; inset: 0; }
+  .marca { font-weight: 800; font-size: 96px; letter-spacing: .08em; line-height: 1; white-space: nowrap; position: relative; }
+  .marca sup { color: #e8c27a; font-size: .34em; vertical-align: top; position: relative; top: .08em; margin-left: .06em; letter-spacing: 0; }
+  .slogan { margin-top: 34px; font-size: 38px; font-weight: 300; letter-spacing: .14em; text-transform: uppercase; position: relative; }
+  .slogan b { font-weight: 600; color: #7fe0ff; }
+  .rodape { position: absolute; bottom: 38px; font-size: 22px; letter-spacing: .22em; color: #9aa7b4; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <svg class="aneis" viewBox="0 0 1200 630" aria-hidden="true">
+    <g fill="none" stroke-linecap="round">
+      <line x1="0" y1="290" x2="1200" y2="290" stroke="rgba(127,224,255,.10)" stroke-width="1"/>
+      <circle cx="600" cy="290" r="250" stroke="rgba(127,224,255,.07)" stroke-width="1"/>
+      <circle cx="600" cy="290" r="190" stroke="rgba(127,224,255,.10)" stroke-width="1" stroke-dasharray="2 10"/>
+      <path d="M 380 160 L 380 130 L 410 130" stroke="rgba(127,224,255,.45)" stroke-width="2"/>
+      <path d="M 820 160 L 820 130 L 790 130" stroke="rgba(127,224,255,.45)" stroke-width="2"/>
+      <path d="M 380 420 L 380 450 L 410 450" stroke="rgba(127,224,255,.45)" stroke-width="2"/>
+      <path d="M 820 420 L 820 450 L 790 450" stroke="rgba(127,224,255,.45)" stroke-width="2"/>
+    </g>
+  </svg>
+  <div class="marca">TECNOFAG GUARD<sup>®</sup></div>
+  <div class="slogan">Você visualiza. <b>Você identifica.</b></div>
+  <div class="rodape">tecnofagguard.com.br · Brasil</div>
+</body>
+</html>

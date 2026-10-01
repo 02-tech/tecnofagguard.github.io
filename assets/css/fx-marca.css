@@ -1,0 +1,686 @@
+/*
+ * TECNOFAG GUARD®
+ * Todos os seletores ficam restritos à assinatura.
+ * O estado inicial é também o estado final, inclusive sem JavaScript.
+ */
+
+.rodape .assinatura {
+  --fx-marca-texto: #f1f4f8;
+  --fx-marca-ouro: #d3b57e;
+  --fx-marca-ouro-claro: #ffe5a6;
+  --fx-marca-foco: #9ee7f0;
+  --fx-marca-tamanho: clamp(1rem, 8.1vw, 6.5rem);
+  --fx-marca-duracao: 3.6s;
+  --fx-marca-escala: 2.85;
+  --fx-marca-reserva: clamp(5.5rem, 11vw, 10rem); /* CLAUDE (integração): menos vazio em repouso; o selo avança sobre o respiro do rodapé */
+  --fx-marca-raio: clamp(3.5rem, 8vw, 7rem);
+  --fx-marca-raio-inicial: 1.5rem;
+  --fx-marca-onda-inicio: 0.45;
+  --fx-marca-deslocamento-x: 0px;
+  --fx-marca-deslocamento-y: 0px;
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+
+  box-sizing: border-box;
+  inline-size: 100%;
+  max-inline-size: none;
+  min-inline-size: 0;
+
+  margin: 0 auto 0.75rem;
+  padding-block: var(--fx-marca-reserva) 3rem;
+  padding-inline: 0.75rem;
+
+  /*
+   * O espaço do selo já existe no primeiro quadro.
+   * O recorte local contém todo o efeito, sem modificar o rodapé
+   * nem depender de overflow aplicado ao restante da página.
+   */
+  /* CLAUDE (integração): corta só na horizontal (sem rolagem lateral); o selo pode subir sobre o respiro do rodapé */
+  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
+
+  background: transparent; /* CLAUDE (integração): usa o fundo do rodapé, sem retângulo próprio */
+  color: var(--fx-marca-texto);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Os filhos ajustam a tipografia à largura efetiva da assinatura. */
+@supports (container-type: inline-size) and (font-size: 1cqi) {
+  .rodape .assinatura {
+    container-type: inline-size;
+    --fx-marca-tamanho: clamp(1rem, 9.8cqi, 6.5rem);
+  }
+}
+
+.rodape .assinatura .assinatura-nome {
+  position: relative;
+  z-index: 2;
+  display: block;
+  flex: 0 0 auto;
+
+  margin: 0;
+  padding: 0;
+
+  color: var(--fx-marca-texto);
+  font-family: inherit;
+  font-size: var(--fx-marca-tamanho);
+  font-weight: 650;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: -0.045em;
+
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
+  opacity: 1;
+  animation: none;
+  transition: none;
+}
+
+.rodape .assinatura .assinatura-reg {
+  -webkit-appearance: none;
+  appearance: none;
+
+  position: relative;
+  z-index: 3;
+  display: block;
+  flex: 0 0 auto;
+  box-sizing: content-box;
+
+  inline-size: 1.16em;
+  block-size: 1.16em;
+  min-inline-size: 0;
+  min-block-size: 0;
+  max-inline-size: none;
+  max-block-size: none;
+
+  margin-block-start: calc(var(--fx-marca-tamanho) * -0.025);
+  margin-block-end: 0;
+  margin-inline-start: calc(var(--fx-marca-tamanho) * 0.045);
+  margin-inline-end: 0;
+  padding: 0;
+
+  overflow: visible;
+  border: 0;
+  border-radius: 0.2em;
+  background: transparent;
+  box-shadow: none;
+
+  color: var(--fx-marca-ouro);
+  font-family: inherit;
+  font-size: calc(var(--fx-marca-tamanho) * 0.5);
+  font-weight: 550;
+  font-style: normal;
+  line-height: 1.16;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  text-shadow: none;
+  -webkit-text-fill-color: currentColor;
+
+  opacity: 1;
+  transform: none;
+  transform-origin: 50% 50%;
+  animation: none;
+  transition: none;
+
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgb(255 229 166 / 18%);
+}
+
+/* Área de toque confortável sem ocupar espaço adicional na linha. */
+.rodape .assinatura .assinatura-reg::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+
+  inline-size: 44px;
+  block-size: 44px;
+  min-inline-size: 100%;
+  min-block-size: 100%;
+
+  border-radius: 0.4rem;
+  transform: translate(-50%, -50%);
+}
+
+.rodape .assinatura .assinatura-reg:focus {
+  outline: 2px solid var(--fx-marca-foco);
+  outline-offset: 5px;
+}
+
+.rodape .assinatura .assinatura-reg:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (hover: hover) {
+  .rodape .assinatura .assinatura-reg:hover {
+    color: var(--fx-marca-ouro-claro);
+  }
+}
+
+.rodape .assinatura .assinatura-legenda {
+  position: absolute;
+  z-index: 2;
+  inset-inline: 0;
+  inset-block-end: 0.7rem;
+  display: block;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0 0.75rem;
+
+  color: var(--fx-marca-ouro-claro);
+  font-family: inherit;
+  font-size: clamp(0.6875rem, 0.9vw, 0.8125rem);
+  font-weight: 550;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 0.32em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  opacity: 0;
+  animation: none;
+  transition: none;
+  pointer-events: none;
+}
+
+/*
+ * As decorações compartilham um centro fixo acima do nome.
+ * Permanecem mensuráveis, mas invisíveis e inativas em repouso.
+ */
+.rodape .assinatura .fx-marca-decoracao {
+  position: absolute;
+  z-index: 1;
+  inset-inline-start: 50%;
+  inset-block-start: calc(var(--fx-marca-reserva) / 2);
+  display: block;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  animation: none;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.rodape .assinatura .fx-marca-aura {
+  z-index: 0;
+  inline-size: calc(var(--fx-marca-raio) * 2);
+  block-size: calc(var(--fx-marca-raio) * 2);
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgb(255 221 147 / 12%) 0%,
+    rgb(241 189 92 / 9%) 30%,
+    rgb(211 157 64 / 4%) 52%,
+    rgb(211 157 64 / 0%) 73%
+  );
+}
+
+.rodape .assinatura .fx-marca-onda {
+  inline-size: calc(var(--fx-marca-raio) * 2);
+  block-size: calc(var(--fx-marca-raio) * 2);
+  border: 1px solid #f5d18b;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    0 0 7px rgb(249 203 117 / 28%),
+    inset 0 0 5px rgb(249 203 117 / 12%);
+}
+
+.rodape .assinatura .fx-marca-aro {
+  inline-size: calc(var(--fx-marca-raio-inicial) * 2);
+  block-size: calc(var(--fx-marca-raio-inicial) * 2);
+  border: 1px solid #f5d99b;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 9px rgb(249 203 117 / 22%);
+}
+
+/* Cada traço tem uma cauda curta e uma ponta luminosa discreta. */
+.rodape .assinatura .fx-marca-particula {
+  inline-size: var(--fx-marca-comprimento, 5px);
+  block-size: var(--fx-marca-espessura, 1px);
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    rgb(225 165 64 / 0%) 0%,
+    rgb(232 183 93 / 50%) 40%,
+    #ffe9b8 100%
+  );
+
+  box-shadow: 0 0 4px rgb(255 222 156 / 20%);
+}
+
+.rodape .assinatura .fx-marca-particula::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 50%;
+
+  inline-size: 1.5px;
+  block-size: 1.5px;
+  border-radius: 50%;
+  background: #fff0ca;
+  transform: translateY(-50%);
+}
+
+/* Todas as camadas compartilham a mesma duração e começam juntas. */
+.rodape .assinatura.fx-marca-ativa .assinatura-nome {
+  animation: fx-marca-nome var(--fx-marca-duracao) ease-in-out 1;
+}
+
+.rodape .assinatura.fx-marca-ativa .assinatura-reg {
+  animation: fx-marca-registro var(--fx-marca-duracao)
+    cubic-bezier(0.4, 0, 0.18, 1) 1;
+}
+
+.rodape .assinatura.fx-marca-ativa .assinatura-legenda {
+  animation: fx-marca-legenda var(--fx-marca-duracao) ease-in-out 1;
+}
+
+.rodape .assinatura.fx-marca-ativa .fx-marca-decoracao {
+  visibility: visible;
+}
+
+.rodape .assinatura.fx-marca-ativa .fx-marca-aura {
+  animation: fx-marca-aura var(--fx-marca-duracao) ease-in-out 1;
+}
+
+.rodape .assinatura.fx-marca-ativa .fx-marca-onda {
+  animation: fx-marca-onda var(--fx-marca-duracao)
+    cubic-bezier(0.16, 0.6, 0.3, 1) 1;
+}
+
+.rodape .assinatura.fx-marca-ativa .fx-marca-aro {
+  animation: fx-marca-aro var(--fx-marca-duracao) ease-in-out 1;
+}
+
+.rodape .assinatura.fx-marca-ativa .fx-marca-particula {
+  animation: fx-marca-particulas var(--fx-marca-duracao)
+    cubic-bezier(0.4, 0, 0.2, 1) 1;
+}
+
+/*
+ * O dourado tem profundidade sem duplicar o caractere no DOM.
+ * Navegadores sem recorte de texto utilizam a cor sólida animada.
+ */
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .rodape .assinatura.fx-marca-ativa .assinatura-reg {
+    background-image: linear-gradient(
+      165deg,
+      #fff3ce 8%,
+      #f6d17b 40%,
+      #cc933f 66%,
+      #ffe8aa 88%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* A pausa abrange movimento, brilho, partículas e legenda. */
+.rodape .assinatura.fx-marca-ativa.fx-marca-pausada .assinatura-nome,
+.rodape .assinatura.fx-marca-ativa.fx-marca-pausada .assinatura-reg,
+.rodape .assinatura.fx-marca-ativa.fx-marca-pausada .assinatura-legenda,
+.rodape .assinatura.fx-marca-ativa.fx-marca-pausada .fx-marca-decoracao {
+  animation-play-state: paused;
+}
+
+@keyframes fx-marca-nome {
+  0%,
+  96%,
+  100% {
+    opacity: 1;
+  }
+
+  17%,
+  77% {
+    opacity: 0.78;
+  }
+}
+
+/*
+ * Reconhecimento, elevação, permanência, fechamento e assentamento.
+ * O ® mantém sua integridade tipográfica durante toda a sequência.
+ */
+@keyframes fx-marca-registro {
+  0% {
+    color: var(--fx-marca-ouro);
+    transform: translate(0, 0) scale(1);
+    text-shadow: 0 0 0 rgb(255 222 147 / 0%);
+  }
+
+  11% {
+    color: var(--fx-marca-ouro-claro);
+    transform: translate(0, 0) scale(1.06);
+    text-shadow:
+      0 0 7px rgb(255 225 155 / 32%),
+      0 0 18px rgb(230 165 58 / 18%);
+  }
+
+  33%,
+  62% {
+    color: var(--fx-marca-ouro-claro);
+    transform:
+      translate(
+        var(--fx-marca-deslocamento-x),
+        var(--fx-marca-deslocamento-y)
+      )
+      scale(var(--fx-marca-escala));
+    text-shadow:
+      0 0 5px rgb(255 230 165 / 24%),
+      0 0 14px rgb(231 170 68 / 24%);
+  }
+
+  76% {
+    color: #fff0c4;
+    transform:
+      translate(
+        var(--fx-marca-deslocamento-x),
+        var(--fx-marca-deslocamento-y)
+      )
+      scale(var(--fx-marca-escala));
+    text-shadow:
+      0 0 6px rgb(255 232 181 / 38%),
+      0 0 16px rgb(235 181 86 / 28%);
+  }
+
+  95% {
+    color: var(--fx-marca-ouro);
+    transform: translate(0, 1px) scale(0.98);
+    text-shadow: 0 0 4px rgb(255 222 147 / 10%);
+  }
+
+  100% {
+    color: var(--fx-marca-ouro);
+    transform: translate(0, 0) scale(1);
+    text-shadow: 0 0 0 rgb(255 222 147 / 0%);
+  }
+}
+
+@keyframes fx-marca-aura {
+  0%,
+  22% {
+    opacity: 0;
+  }
+
+  37%,
+  61% {
+    opacity: 1;
+  }
+
+  74% {
+    opacity: 0.65;
+  }
+
+  85%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Uma única onda se abre e desaparece, sem pulsação contínua. */
+@keyframes fx-marca-onda {
+  0%,
+  32% {
+    opacity: 0;
+    transform:
+      translate(-50%, -50%)
+      scale(var(--fx-marca-onda-inicio));
+  }
+
+  36% {
+    opacity: 0.85;
+    transform:
+      translate(-50%, -50%)
+      scale(var(--fx-marca-onda-inicio));
+  }
+
+  61%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+}
+
+/* O aro reaparece no encontro das partículas, como um selo se fechando. */
+@keyframes fx-marca-aro {
+  0%,
+  32% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.88);
+  }
+
+  39% {
+    opacity: 0.36;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  54%,
+  61% {
+    opacity: 0.12;
+    transform: translate(-50%, -50%) scale(1.03);
+  }
+
+  73% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  82%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+}
+
+@keyframes fx-marca-particulas {
+  0%,
+  33% {
+    opacity: 0;
+    transform:
+      translate(
+        calc(-50% + var(--fx-marca-x0)),
+        calc(-50% + var(--fx-marca-y0))
+      )
+      rotate(var(--fx-marca-angulo))
+      scaleX(0.35);
+  }
+
+  38% {
+    opacity: calc(var(--fx-marca-intensidade) * 0.6);
+    transform:
+      translate(
+        calc(-50% + var(--fx-marca-x0)),
+        calc(-50% + var(--fx-marca-y0))
+      )
+      rotate(var(--fx-marca-angulo))
+      scaleX(0.7);
+  }
+
+  51%,
+  57% {
+    opacity: var(--fx-marca-intensidade);
+    transform:
+      translate(
+        calc(-50% + var(--fx-marca-x1)),
+        calc(-50% + var(--fx-marca-y1))
+      )
+      rotate(var(--fx-marca-angulo))
+      scaleX(1);
+  }
+
+  73% {
+    opacity: calc(var(--fx-marca-intensidade) * 0.8);
+    transform:
+      translate(
+        calc(-50% + var(--fx-marca-x0)),
+        calc(-50% + var(--fx-marca-y0))
+      )
+      rotate(var(--fx-marca-angulo))
+      scaleX(0.45);
+  }
+
+  79%,
+  100% {
+    opacity: 0;
+    transform:
+      translate(
+        calc(-50% + var(--fx-marca-x0)),
+        calc(-50% + var(--fx-marca-y0))
+      )
+      rotate(var(--fx-marca-angulo))
+      scaleX(0.15);
+  }
+}
+
+@keyframes fx-marca-legenda {
+  0%,
+  33% {
+    opacity: 0;
+  }
+
+  45%,
+  70% {
+    opacity: 1;
+  }
+
+  85%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Modalidade reduzida: somente cor do ® e opacidade da legenda. */
+@keyframes fx-marca-cor {
+  0%,
+  100% {
+    color: var(--fx-marca-ouro);
+  }
+
+  32%,
+  68% {
+    color: var(--fx-marca-ouro-claro);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rodape .assinatura.fx-marca-ativa .assinatura-nome {
+    animation: none;
+    opacity: 1;
+  }
+
+  .rodape .assinatura.fx-marca-ativa .assinatura-reg {
+    animation-name: fx-marca-cor;
+    background: transparent;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+    transform: none;
+    text-shadow: none;
+  }
+
+  .rodape .assinatura.fx-marca-ativa .fx-marca-decoracao {
+    visibility: hidden;
+    opacity: 0;
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .rodape .assinatura {
+    --fx-marca-texto: CanvasText;
+    --fx-marca-ouro: CanvasText;
+    --fx-marca-ouro-claro: CanvasText;
+    --fx-marca-foco: Highlight;
+
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .rodape .assinatura.fx-marca-ativa .assinatura-nome {
+    animation: none;
+    opacity: 1;
+  }
+
+  .rodape .assinatura .assinatura-reg,
+  .rodape .assinatura.fx-marca-ativa .assinatura-reg {
+    background: transparent;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+    transform: none;
+    text-shadow: none;
+  }
+
+  .rodape .assinatura.fx-marca-ativa .assinatura-reg {
+    animation-name: fx-marca-cor;
+  }
+
+  .rodape .assinatura.fx-marca-ativa .fx-marca-decoracao {
+    visibility: hidden;
+    opacity: 0;
+    animation: none;
+  }
+}
+
+/* Impressão: assinatura estática, sem reservar espaço para o efeito. */
+@media print {
+  .rodape .assinatura {
+    padding-block: 1rem;
+    overflow: visible;
+    background: transparent;
+  }
+
+  .rodape .assinatura .assinatura-nome,
+  .rodape .assinatura .assinatura-reg,
+  .rodape .assinatura .assinatura-legenda,
+  .rodape .assinatura .fx-marca-decoracao {
+    animation: none !important;
+  }
+
+  .rodape .assinatura .assinatura-nome,
+  .rodape .assinatura .assinatura-reg {
+    color: #000 !important;
+    background: transparent !important;
+    -webkit-text-fill-color: currentColor !important;
+    opacity: 1 !important;
+    transform: none !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  .rodape .assinatura .assinatura-legenda,
+  .rodape .assinatura .fx-marca-decoracao {
+    display: none !important;
+  }
+}
