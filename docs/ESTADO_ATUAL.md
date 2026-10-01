@@ -55,3 +55,14 @@
 ## Rollback
 
 `git revert` do commit desta publicação e `git push`; ou voltar ao placeholder `c86fcaa`. Ver `docs/RUNBOOK.md`.
+
+## Publicação e validação em produção — 2026-10-01
+
+- Commit `9616475` publicado em `main`; build do GitHub Pages `built` para esse commit.
+- `https://tecnofagguard.com.br/` responde 200; `http://`, `https://www.` e `http://www.` respondem 301 para o apex HTTPS.
+- Arquivos internos NÃO publicados (404): `docs/`, `tools/`, `CLAUDE.md`, `README.md`, `_config.yml`.
+- Conteúdo servido idêntico ao local (index, CSS, JS, robots, sitemap). Sem `noindex`.
+- `node tools/testar-site.js https://tecnofagguard.com.br/`: TODOS OS TESTES OK. Celular lento simulado: LCP 740 ms,
+  CLS 0, tempo bloqueado 0 ms, 30 KB transferidos (com compressão do GitHub Pages).
+- PageSpeed Insights (API pública): recusado com 429 (cota diária anônima esgotada); não executado. Repetir depois em
+  https://pagespeed.web.dev/ ou com chave de API.
