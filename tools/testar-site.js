@@ -20,13 +20,23 @@ const ch = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${port}`, `
 
 let encerrado = false;
 function encerrar(codigo) {
-  if (!encerrado) { encerrado = true; try { ch.kill(); } catch (e) { /* já saiu */ } }
+  if (!encerrado) { encerrado = true; try { matarChrome(); } catch (e) { /* já saiu */ } }
   setTimeout(() => { try { fs.rmSync(perfil, { recursive: true, force: true }); } catch (e) { /* ok */ } process.exit(codigo); }, 400);
 }
 process.on("SIGINT", () => encerrar(130)); process.on("SIGTERM", () => encerrar(143));
 process.on("uncaughtException", e => { console.error("ERRO", e); encerrar(1); });
 const limite = setTimeout(() => { console.error("TIMEOUT GLOBAL"); encerrar(3); }, 8 * 60 * 1000);
 
+// No Windows o Chrome headless se desvincula do processo aberto pelo node (nem ch.kill nem taskkill /T o alcançam):
+// encerra todo chrome.exe cuja linha de comando contém a pasta de perfil EXCLUSIVA deste teste (nunca o Chrome do usuário).
+function matarChrome() {
+  try { ch.kill(); } catch (e) { /* já saiu */ }
+  if (process.platform !== "win32") return;
+  const marca = require("path").basename(perfil);
+  require("child_process").spawnSync("powershell.exe", ["-NoProfile", "-Command",
+    "Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'chrome.exe' -and $_.CommandLine -like '*" + marca + "*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }"],
+    { stdio: "ignore", timeout: 30000 });
+}
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 let falhas = 0;
 const ok = (cond, msg) => { console.log((cond ? "ok   " : "FALHA") + " - " + msg); if (!cond) falhas++; };
