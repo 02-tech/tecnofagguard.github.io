@@ -85,3 +85,7 @@ Scripts que registram cada troca: `tools/revisao-editorial-20261001.js`, `...b.j
 - Apoio ativo: chave Pix CNPJ 60.179.279/0001-44 (informada por Guilherme), titular Imperial Volt (link), botão para
   copiar a chave quando o navegador permite; aviso de que apoio não é investimento mantido.
 - Testes locais: testar-site.js TODOS OK (LCP 924 ms, CLS 0); verificar-conteudo auditar TUDO OK.
+
+## 2026-10-02: identidade digital unificada
+
+- JSON-LD: a pessoa passou a usar o @id canônico `https://faguital.com.br/#person` e a empresa `https://imperialvolt.com/#organization` (antes eram nós locais deste site). `llms.txt` e `humans.txt` criados. Gerador em faguital.com.br/tools/entidade-20261002.js.
