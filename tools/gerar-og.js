@@ -23,7 +23,7 @@ function matarChrome() {
 }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 (async () => {
-  let alvos; for (let i = 0; i < 60; i++) { try { alvos = await (await fetch(`http://127.0.0.1:${port}/json`)).json(); break; } catch { await sleep(200); } }
+  let alvos; for (let i = 0; i < 150; i++) { try { alvos = await (await fetch(`http://127.0.0.1:${port}/json`)).json(); break; } catch { await sleep(200); } }
   const ws = new WebSocket(alvos.find(x => x.type === "page").webSocketDebuggerUrl); await new Promise(r => ws.addEventListener("open", r));
   let id = 0; const pend = new Map(); ws.addEventListener("message", e => { const m = JSON.parse(e.data); if (m.id && pend.has(m.id)) { pend.get(m.id)(m); pend.delete(m.id); } });
   const send = (method, params = {}) => new Promise(r => { const i = ++id; pend.set(i, r); ws.send(JSON.stringify({ id: i, method, params })); });

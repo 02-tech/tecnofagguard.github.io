@@ -43,7 +43,7 @@ const ok = (cond, msg) => { console.log((cond ? "ok   " : "FALHA") + " - " + msg
 
 (async () => {
   let alvos;
-  for (let i = 0; i < 60; i++) { try { alvos = await (await fetch(`http://127.0.0.1:${port}/json`)).json(); break; } catch { await sleep(200); } }
+  for (let i = 0; i < 150; i++) { try { alvos = await (await fetch(`http://127.0.0.1:${port}/json`)).json(); break; } catch { await sleep(200); } }
   const ws = new WebSocket(alvos.find(x => x.type === "page").webSocketDebuggerUrl);
   await new Promise(r => ws.addEventListener("open", r));
   let id = 0; const pend = new Map(); let erros = [];
