@@ -1,0 +1,11 @@
+# TECNOFAG GUARD®
+
+> Ecossistema brasileiro de identificação digital que conecta elementos do mundo físico a experiências digitais por meio da integração entre hardware e software. Criado por Guilherme Carvalho de Andrade (FAGUITAL). Em desenvolvimento, com pedido de patente de invenção depositado no INPI e marca concedida.
+
+Site oficial: https://tecnofagguard.com.br/
+
+- Criador: [Guilherme Carvalho de Andrade (FAGUITAL)](https://faguital.com.br/)
+- Origem: Brasil (ideia em 2023, estudos desde 2019 e 2020)
+- Parcerias e propostas comerciais: estrutura da [Imperial Volt](https://imperialvolt.com/), empresa do criador
+- Informações técnicas são reservadas; informações públicas estão disponíveis neste site.
+- Instagram oficial: https://www.instagram.com/tecnofagguard.com.br/
